@@ -10,6 +10,8 @@ import {DirectiveComponent} from './components/directive/directive.component';
 import {LocaleComponent} from './components/locale/locale.component';
 import {CustomPipeComponent} from './components/custom-pipe/custom-pipe.component';
 import {CustomDirectiveComponent} from './components/custom-directive/custom-directive.component';
+import {FormulaireComponent} from './components/formulaire/formulaire.component';
+import {SignupComponent} from './components/signup/signup.component';
 
 const routes: Routes = [
   { path: 'home', component: AppComponent },
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'locale', component: LocaleComponent },
   { path: 'custom-pipe', component: CustomPipeComponent },
   { path: 'custom-directive', component: CustomDirectiveComponent },
+  { path: 'formulaire', component: FormulaireComponent },
+  { path: 'signup', component: SignupComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // prefix
   { path: '**', component: NotFoundComponent }

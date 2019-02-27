@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {LOCALE_ID, NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -26,6 +26,8 @@ import { PowerPipe } from './pipes/power/power.pipe';
 import { PipelindromePipe } from './pipes/pipelindrome/pipelindrome.pipe';
 import { CustomDirectiveComponent } from './components/custom-directive/custom-directive.component';
 import { HighlightDirective } from './directives/highlight/highlight.directive';
+import { FormulaireComponent } from './components/formulaire/formulaire.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 
 @NgModule({
@@ -42,12 +44,15 @@ import { HighlightDirective } from './directives/highlight/highlight.directive';
     PowerPipe,
     PipelindromePipe,
     CustomDirectiveComponent,
-    HighlightDirective
+    HighlightDirective,
+    FormulaireComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr' }
