@@ -1,4 +1,4 @@
-import {Directive, ElementRef, HostListener} from '@angular/core';
+import {Directive, ElementRef, HostListener, Input} from '@angular/core';
 
 @Directive({
   selector: '[appHighlight]'
@@ -11,18 +11,23 @@ export class HighlightDirective {
     this.eltRef = eltRef;
   }*/
 
+  @Input('appHighlight') bgColor: string;
+
+  @Input() color: string;
+
   constructor(private eltRef: ElementRef) { }
 
   @HostListener('mouseover') onMouseOver() {
-    this.highlight('orange');
+    this.highlight(this.bgColor || 'orange', this.color);
   }
 
   @HostListener('mouseout') onMouseOut() {
-    this.highlight('initial');
+    this.highlight('initial', 'initial');
   }
 
-  private highlight(bgColor: string): void {
+  private highlight(bgColor: string, color?: string): void {
     this.eltRef.nativeElement.style.backgroundColor = bgColor;
+    this.eltRef.nativeElement.style.color = color;
   }
 
 }
