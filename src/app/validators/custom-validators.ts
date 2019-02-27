@@ -17,4 +17,21 @@ export class CustomValidators {
     };
   }
 
+  public static match_password(): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      return ( control.get('password').value !== control.get('confirm').value ) ? { matchPassword : control } : null;
+    }
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
+

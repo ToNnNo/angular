@@ -39,6 +39,8 @@ export class SignupComponent implements OnInit {
       password: this.password,
       confirm: this.confirm,
       term: this.term,
+    }, {
+      validators: CustomValidators.match_password()
     });
   }
 
@@ -92,6 +94,10 @@ export class SignupComponent implements OnInit {
     if ( this.confirm.touched ) {
       if (this.confirm.hasError('required')) {
         return `La confirmation est obligatoire`;
+      }
+
+      if (this.form.hasError('matchPassword')) {
+        return `La confirmation ne correspond pas au mot de passe`;
       }
     }
 
