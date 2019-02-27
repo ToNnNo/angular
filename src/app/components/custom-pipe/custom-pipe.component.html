@@ -1,0 +1,12 @@
+<header>
+  <h2>Pipe Personnalisé</h2>
+</header>
+
+<p> 1 octet (2^8) = {{ 2 | power:8 }}</p>
+
+<p class="lead text-primary">Pipelindrome</p>
+
+<input type="text" class="form-control" placeholder="Entrer votre palindrome"
+  #input (keyup.enter)="0" />
+
+<p class="form-control-plaintext">{{ input.value | pipelindrome}}</p>

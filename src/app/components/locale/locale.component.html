@@ -1,0 +1,20 @@
+<header>
+  <h2>l10n</h2>
+</header>
+
+<div class="btn-group btn-group-sm mb-3">
+  <button class="btn btn-outline-dark" (click)="changeLang('en')">Anglais</button>
+  <button class="btn btn-outline-dark" (click)="changeLang('fr')">Français</button>
+  <button class="btn btn-outline-dark" (click)="changeLang('de')">Allemand</button>
+  <button class="btn btn-outline-dark" (click)="changeLang('ja')">Japonais</button>
+</div>
+<div class="w-100"></div>
+<div class="btn-group btn-group-sm mb-3">
+  <button class="btn btn-outline-dark" (click)="changeDevise('EUR')">Euro</button>
+  <button class="btn btn-outline-dark" (click)="changeDevise('JPY')">Yen</button>
+  <button class="btn btn-outline-dark" (click)="changeDevise('USD')">Dollar</button>
+</div>
+
+<p>{{ date | date:'full':'':lang}}</p>
+
+<p>{{ 9999.1234 | currency:devise:'symbol-narrow':'':lang }}</p>

@@ -1,0 +1,88 @@
+<header>
+  <h2>Présentation</h2>
+</header>
+
+<h3>Affichage</h3>
+<div class="row">
+  <div class="col">
+    1 + 2 = {{ 1 + 2 }}
+  </div>
+  <div class="col">
+    Bonjour {{ name }}
+  </div>
+  <div class="col">
+    {{ product.name }} @ {{ product.price }} &euro;
+  </div>
+
+  <div class="w-100"></div>
+
+  <div class="col">
+    {{ html }}
+  </div>
+  <div class="col">
+    <p [innerHTML]="html"></p>
+  </div>
+  <div class="col">
+    {{ uppercase(product.name) }}
+  </div>
+
+  <div class="w-100"></div>
+
+  <div class="col">
+    <img [src]="source" alt="mon image" width="200" />
+  </div>
+</div>
+
+<h3 class="mt-5">Events</h3>
+<div class="row">
+  <div class="col">
+    <button class="btn btn-outline-primary" (click)="clicked()">Cliquez ici</button>
+  </div>
+
+  <div class="col">
+    <a href="#" class="btn btn-outline-primary" (click)="confirmation($event)">Confirmer ?</a>
+  </div>
+
+</div>
+
+<h3 class="mt-5">Two Way Data Binding</h3>
+<p class="small"> ngModel = Banana in box [()] </p>
+
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="Entrer votre message" [(ngModel)]="message" />
+  <div class="input-group-append">
+    <button class="btn btn-outline-primary" (click)="showMessage()">
+      Voir message
+    </button>
+  </div>
+</div>
+<p class="form-control-plaintext">{{ message }}</p>
+
+<h3 class="mt-5">Variables template</h3>
+<p class="small"> #nomdevariable = document.querySelector() </p>
+
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="Entrer votre message" #input (keyup.enter)="0" />
+</div>
+<p class="form-control-plaintext">{{ input.value }}</p>
+
+<h3 class="mt-5">ngFor (ngForOf)</h3>
+
+<ul class="list-unstyled">
+  <li *ngFor="let name of liste; index as i">{{i}}: {{ name }}</li>
+</ul>
+
+<!-- ajouter dans un tableau: push() -->
+<!-- retirer une valeur du tableau: splice(index, qte) -->
+
+
+
+
+
+
+
+
+
+
+
+

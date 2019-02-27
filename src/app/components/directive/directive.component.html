@@ -1,0 +1,113 @@
+<header>
+  <h2>Directive</h2>
+</header>
+
+<ul>
+  <li>Les directives structurelles : Elles ont pour but de modifier le DOM en ajoutant,
+    enlevant ou replaçant un élément du DOM.</li>
+  <li>Les directives attributs : Elles ont pour but de modifier l'apparence ou le
+    comportement d'un élément.</li>
+</ul>
+
+<h3>ngIf</h3>
+
+<div class="my-3">
+  <button class="btn btn-outline-primary" (click)="isVisible = !isVisible">
+    {{ isVisible? 'Hide': 'Show' }}
+  </button>
+</div>
+
+<p *ngIf="isVisible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, asperiores deserunt eligendi error eum ipsa iste
+  itaque mollitia nesciunt nisi quaerat quia ratione repellendus sapiente, sequi, similique suscipit velit vero.</p>
+
+<p *ngIf="isVisible; else elseBlock">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi aperiam at consequuntur fuga iste veritatis
+  voluptatibus! Ad doloremque doloribus dolorum earum eligendi, facere minima pariatur perspiciatis ratione repellendus
+  vitae.</p>
+
+<ng-template #elseBlock>
+  <p>Lorem ipsum dolor sit amet, [...] repellendus vitae.</p>
+</ng-template>
+
+<h3>ngFor</h3>
+
+<ul>
+  <li *ngFor="let value of ['a', 'b', 'c']; index as index; even as even; odd as odd; first as first; last as last">
+    <ul class="list-unstyled">
+      <li>Index = {{ index }}</li>
+      <li>Value = {{ value }}</li>
+      <li>Even = {{ even }}</li>
+      <li>Odd = {{ odd }}</li>
+      <li>First = {{ first }}</li>
+      <li>Last = {{ last }}</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>ngSwitch</h3>
+
+<div class="btn-group btn-group-sm my-2">
+  <button class="btn btn-outline-dark" (click)=" mode = 'vertical' ">Vertical</button>
+  <button class="btn btn-outline-dark" (click)=" mode = 'horizontal' ">Horizontal</button>
+</div>
+
+<div [ngSwitch]="mode">
+  <!-- ul.list-unstyled>li*5>{Element $} -->
+  <ul class="list-unstyled" *ngSwitchCase=" 'vertical' ">
+    <li>Element 1</li>
+    <li>Element 2</li>
+    <li>Element 3</li>
+    <li>Element 4</li>
+    <li>Element 5</li>
+  </ul>
+
+  <!-- ul.list-inline>li.list-inline-item*5>{Element $} -->
+  <ul class="list-inline" *ngSwitchCase=" 'horizontal' ">
+    <li class="list-inline-item">Element 1</li>
+    <li class="list-inline-item">Element 2</li>
+    <li class="list-inline-item">Element 3</li>
+    <li class="list-inline-item">Element 4</li>
+    <li class="list-inline-item">Element 5</li>
+  </ul>
+
+  <p *ngSwitchDefault class="text-black-50">Choisissez un mode d'affichage</p>
+</div>
+
+<h3>ngClass</h3>
+
+<p [ngClass]=" 'lead text-primary' ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci autem, eius eos esse eum facilis fuga id
+  inventore iure maiores natus neque non numquam possimus, provident sapiente soluta vitae.</p>
+
+<p [ngClass]="['lead', 'text-success']">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci autem, eius eos esse eum facilis fuga id
+  inventore iure maiores natus neque non numquam possimus, provident sapiente soluta vitae.</p>
+
+<button class="my-3 btn btn-outline-primary" (click)="hasClass = !hasClass">
+  Toogle Class
+</button>
+
+<p [ngClass]="{'text-warning': hasClass, 'text-danger': !hasClass}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut, eius modi nulla quis repellendus. Ab
+  excepturi ipsum maxime nulla provident, quaerat voluptatibus. Aliquam corporis cumque eligendi omnis perferendis
+  sapiente.</p>
+
+<h3>ngStyle</h3>
+
+<div class="btn-group my-3">
+  <button class="btn btn-outline-primary" (click)="progress = '0%'">0%</button>
+  <button class="btn btn-outline-primary" (click)="progress = '25%'">25%</button>
+  <button class="btn btn-outline-primary" (click)="progress = '50%'">50%</button>
+  <button class="btn btn-outline-primary" (click)="progress = '75%'">75%</button>
+  <button class="btn btn-outline-primary" (click)="progress = '100%'">100%</button>
+</div>
+
+<div class="progress">
+  <div class="progress-bar" [style.width]="progress" [attr.aria-valuenow]="progress"></div> <!-- [ngStyle]="{'width':progress, 'background-color':'#28a745'}" -->
+</div>
+
+
+
+
+
+
+
+
+
+
