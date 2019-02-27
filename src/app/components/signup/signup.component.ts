@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {CustomValidators} from '../../validators/custom-validators';
 
 @Component({
   selector: 'app-signup',
@@ -22,7 +23,10 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
 
     // FormControl(default value, [Validators], [Asynchronus Validators])
-    this.email = new FormControl(null, [Validators.required]);
+    this.email = new FormControl(null, [
+      Validators.required,
+      CustomValidators.email()
+    ]);
     this.password = new FormControl(null, [
       Validators.required,
       Validators.minLength(this.passwordMinLength)
@@ -39,6 +43,14 @@ export class SignupComponent implements OnInit {
   }
 
   public signup() {
+
+    for ( const key in this.form.controls) {
+      if (this.form.contains(key)) {
+        this.form.get(key).markAsTouched();
+        this.form.get(key).markAsDirty();
+      }
+    }
+
     if (this.form.valid) {
 
       console.log(this.form.value);
@@ -51,6 +63,10 @@ export class SignupComponent implements OnInit {
     if ( this.email.touched ) {
       if (this.email.hasError('required')) {
         return `L'adresse email est obligatoire`;
+      }
+
+      if (this.email.hasError('error_email')) {
+        return `L'adresse email n'est pas valide`;
       }
     }
 
