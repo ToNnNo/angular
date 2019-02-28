@@ -12,6 +12,7 @@ import {CustomPipeComponent} from './components/custom-pipe/custom-pipe.componen
 import {CustomDirectiveComponent} from './components/custom-directive/custom-directive.component';
 import {FormulaireComponent} from './components/formulaire/formulaire.component';
 import {SignupComponent} from './components/signup/signup.component';
+import {ServiceComponent} from './components/service/service.component';
 
 const routes: Routes = [
   { path: 'home', component: AppComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'custom-directive', component: CustomDirectiveComponent },
   { path: 'formulaire', component: FormulaireComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'service', component: ServiceComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // prefix
   { path: '**', component: NotFoundComponent }
