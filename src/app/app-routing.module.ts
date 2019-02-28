@@ -16,6 +16,7 @@ import {ServiceComponent} from './components/service/service.component';
 import {ParametersComponent} from './components/parameters/parameters.component';
 import {ObservableComponent} from './components/observable/observable.component';
 import {SecureRouteGuard} from './guards/secure-route.guard';
+import {AuthenticationComponent} from './components/authentication/authentication.component';
 
 const routes: Routes = [
   { path: 'home', component: AppComponent },
@@ -36,6 +37,7 @@ const routes: Routes = [
     component: ParametersComponent,
     canActivate: [SecureRouteGuard]
   },
+  { path: 'authentication', component: AuthenticationComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // prefix
   { path: '**', component: NotFoundComponent }

@@ -31,6 +31,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ServiceComponent } from './components/service/service.component';
 import { ParametersComponent } from './components/parameters/parameters.component';
 import { ObservableComponent } from './components/observable/observable.component';
+import { AuthenticationComponent } from './components/authentication/authentication.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { ObservableComponent } from './components/observable/observable.componen
     SignupComponent,
     ServiceComponent,
     ParametersComponent,
-    ObservableComponent
+    ObservableComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
