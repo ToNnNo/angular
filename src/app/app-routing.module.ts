@@ -32,7 +32,8 @@ const routes: Routes = [
   { path: 'parameters', component: ParametersComponent },
   {
     path: 'parameters/:name',
-    component: ParametersComponent
+    component: ParametersComponent,
+    canActivate: ['SecureRouteGuard']
   },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // prefix

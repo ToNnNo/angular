@@ -62,7 +62,7 @@ import { ObservableComponent } from './components/observable/observable.componen
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr' },
-    
+    { provide: 'SecureRouteGuard', useValue: () => false }
   ],
   bootstrap: [RouteComponent]
 })
