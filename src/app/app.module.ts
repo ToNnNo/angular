@@ -30,6 +30,7 @@ import { FormulaireComponent } from './components/formulaire/formulaire.componen
 import { SignupComponent } from './components/signup/signup.component';
 import { ServiceComponent } from './components/service/service.component';
 import { ParametersComponent } from './components/parameters/parameters.component';
+import { ObservableComponent } from './components/observable/observable.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { ParametersComponent } from './components/parameters/parameters.componen
     FormulaireComponent,
     SignupComponent,
     ServiceComponent,
-    ParametersComponent
+    ParametersComponent,
+    ObservableComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +61,8 @@ import { ParametersComponent } from './components/parameters/parameters.componen
     ReactiveFormsModule
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: 'fr' }
+    { provide: LOCALE_ID, useValue: 'fr' },
+    
   ],
   bootstrap: [RouteComponent]
 })

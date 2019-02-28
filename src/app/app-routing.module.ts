@@ -13,6 +13,8 @@ import {CustomDirectiveComponent} from './components/custom-directive/custom-dir
 import {FormulaireComponent} from './components/formulaire/formulaire.component';
 import {SignupComponent} from './components/signup/signup.component';
 import {ServiceComponent} from './components/service/service.component';
+import {ParametersComponent} from './components/parameters/parameters.component';
+import {ObservableComponent} from './components/observable/observable.component';
 
 const routes: Routes = [
   { path: 'home', component: AppComponent },
@@ -26,6 +28,12 @@ const routes: Routes = [
   { path: 'formulaire', component: FormulaireComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'service', component: ServiceComponent },
+  { path: 'observable', component: ObservableComponent },
+  { path: 'parameters', component: ParametersComponent },
+  {
+    path: 'parameters/:name',
+    component: ParametersComponent
+  },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // prefix
   { path: '**', component: NotFoundComponent }

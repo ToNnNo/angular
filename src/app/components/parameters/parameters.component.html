@@ -1,0 +1,28 @@
+<header>
+  <h2>Paramètre d'url</h2>
+</header>
+
+<nav>
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/parameters/thais">Thais</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/parameters', 'jason']">Jason</a>
+    </li>
+  </ul>
+</nav>
+
+<p *ngIf="!name; else information">Pour connaitre les secrets de Thais et Jason cliquez sur leur prenom !</p>
+
+<ng-template #information>
+
+  <button class="btn btn-outline-secondary" (click)="back()">Retour</button>
+
+  <h3>{{ name | titlecase }}</h3>
+  <div [ngSwitch]="name">
+    <p *ngSwitchCase=" 'thais' ">J'ai inventé le chifuclone</p>
+    <p *ngSwitchCase=" 'jason' ">J'ai réussi à vaincre Spok dans le Pierre Feuille Ciseaux Lézard Spok</p>
+  </div>
+
+</ng-template>
