@@ -1,0 +1,25 @@
+<header>
+  <h2>Observable</h2>
+</header>
+
+<div class="small">
+  <p>
+    Consulter la doc <a href="https://rxjs-dev.firebaseapp.com/api" target="_blank"> RxJS </a> (Reactive Extensions for JavaScript)
+  </p>
+  <p>
+    Avec Angular les variables qui se termine par le caractère "$" sont par convention
+    des variables qui contiennent un résultat asynchrone.
+  </p>
+</div>
+
+<button class="mb-3 btn btn-outline-primary" (click)="getMultiNumber()" [disabled]="disabled">Synchroniser</button>
+
+<div class="alert alert-warning" *ngIf="message">{{ message }}</div>
+
+<ul class="list-unstyled">
+  <li *ngFor="let number of numbers$"> {{ number }} </li>
+</ul>
+
+<hr />
+
+<p> {{ info$ }}</p>
