@@ -15,6 +15,7 @@ export class LocaleComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.lang = null;
   }
 
   public changeLang(lang: string): void {

@@ -22,4 +22,14 @@ describe('LocaleComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('lang should be null', () => {
+    expect(component.lang).toBeNull();
+  });
+
+  it('should fixe lang', () => {
+    component.changeLang('fr');
+
+    expect(component.lang).toEqual('fr');
+  });
 });
