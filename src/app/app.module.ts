@@ -32,6 +32,8 @@ import { ServiceComponent } from './components/service/service.component';
 import { ParametersComponent } from './components/parameters/parameters.component';
 import { ObservableComponent } from './components/observable/observable.component';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
+import { HttpComponent } from './components/http/http.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -54,13 +56,15 @@ import { AuthenticationComponent } from './components/authentication/authenticat
     ServiceComponent,
     ParametersComponent,
     ObservableComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr' },

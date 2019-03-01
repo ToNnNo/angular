@@ -17,6 +17,7 @@ import {ParametersComponent} from './components/parameters/parameters.component'
 import {ObservableComponent} from './components/observable/observable.component';
 import {SecureRouteGuard} from './guards/secure-route.guard';
 import {AuthenticationComponent} from './components/authentication/authentication.component';
+import {HttpComponent} from './components/http/http.component';
 
 const routes: Routes = [
   { path: 'home', component: AppComponent },
@@ -38,6 +39,7 @@ const routes: Routes = [
     canActivate: [SecureRouteGuard]
   },
   { path: 'authentication', component: AuthenticationComponent },
+  { path: 'http', component: HttpComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // prefix
   { path: '**', component: NotFoundComponent }
