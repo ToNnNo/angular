@@ -14,6 +14,13 @@ export class HttpComponent implements OnInit {
   constructor(private service: UserService) { }
 
   ngOnInit() {
+    this.service.existingResource().subscribe( (data) => {
+      console.log(data);
+    });
+
+    this.service.methodAllow().subscribe( (data) => {
+      console.log(data);
+    });
   }
 
   public getUsers(): void {
